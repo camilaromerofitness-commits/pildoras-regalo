@@ -34,7 +34,7 @@
   h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15}
 
   /* ---------- Portada ---------- */
-  .hero{padding:64px 0 40px;text-align:center}
+  .hero{padding:64px 20px 40px;text-align:center}
   .etiqueta{
     display:inline-block;font-size:13px;font-weight:600;letter-spacing:.12em;
     text-transform:uppercase;color:var(--rosa-osc);background:#fff;
@@ -46,7 +46,7 @@
   .firma{margin-top:22px;font-family:Fraunces,serif;font-style:italic;color:var(--tinta)}
 
   /* ---------- Píldoras ---------- */
-  .pildoras{padding:16px 0 24px;display:flex;flex-direction:column;gap:28px}
+  .pildoras{padding:16px 20px 24px;display:flex;flex-direction:column;gap:28px}
   .pildora{
     background:#fff;border-radius:var(--radio);overflow:hidden;
     box-shadow:0 1px 2px rgba(43,34,32,.05),0 8px 28px rgba(43,34,32,.06);
@@ -113,12 +113,75 @@
   .cierre{text-align:center;margin-top:36px}
   .cierre p{color:#CFC6C1;margin-top:14px;font-size:15px}
 
+  /* ================= BLACK FRIDAY (wow) ================= */
+  .bf{background:radial-gradient(120% 80% at 50% 0%,#2a2017 0%,#120f0d 55%,#0a0908 100%);color:#fff;margin-top:48px;position:relative;overflow:hidden}
+  .cinta{background:var(--oro);color:var(--negro);overflow:hidden;white-space:nowrap;border-block:1px solid #b8914a}
+  .cinta div{display:inline-block;padding:12px 0;font-weight:800;letter-spacing:.14em;font-size:14px;text-transform:uppercase;animation:cinta 28s linear infinite}
+  @keyframes cinta{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .bf-in{max-width:880px;margin:0 auto;padding:72px 20px 80px;position:relative;text-align:center}
+  .bf-fondo{position:absolute;top:24px;left:50%;transform:translateX(-50%);font-family:Fraunces,serif;font-weight:700;
+    font-size:clamp(90px,22vw,230px);line-height:.85;color:transparent;-webkit-text-stroke:1px rgba(217,179,108,.16);
+    white-space:nowrap;pointer-events:none;user-select:none}
+  .bf-kicker{position:relative;display:inline-block;font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:14px;
+    color:var(--negro);background:var(--oro);padding:8px 16px;border-radius:999px;margin-bottom:26px}
+  .bf-aprovecha{position:relative;font-family:Fraunces,serif;font-size:clamp(30px,6vw,46px);line-height:1.1;font-weight:600;margin-bottom:30px}
+  .bf-aprovecha em{font-style:italic;color:var(--oro-claro)}
+  .bf-envivo{position:relative;display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:15px;color:#fff;margin-bottom:8px}
+  .punto{width:10px;height:10px;border-radius:50%;background:#E5484D;box-shadow:0 0 0 0 rgba(229,72,77,.7);animation:latido 1.6s infinite}
+  @keyframes latido{0%{box-shadow:0 0 0 0 rgba(229,72,77,.7)}70%{box-shadow:0 0 0 12px rgba(229,72,77,0)}100%{box-shadow:0 0 0 0 rgba(229,72,77,0)}}
+  .bf-titulo{position:relative;font-family:Fraunces,serif;font-weight:700;line-height:.95;letter-spacing:-.01em;
+    font-size:clamp(52px,13vw,118px);margin-bottom:28px;
+    background:linear-gradient(100deg,#B8914A 0%,#F6E3B4 30%,#D9B36C 50%,#FFF1CF 68%,#B8914A 100%);background-size:200% auto;
+    -webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 6s linear infinite}
+  .bf-titulo small{display:block;font-size:.42em;font-weight:600;letter-spacing:.02em;margin-bottom:6px}
+  @keyframes brillo{to{background-position:200% center}}
+  .bf-ticket{position:relative;display:inline-flex;flex-wrap:wrap;justify-content:center;border:1.5px dashed rgba(217,179,108,.6);border-radius:16px;overflow:hidden;margin-bottom:22px}
+  .bf-ticket div{padding:14px 26px}
+  .bf-ticket div+div{border-left:1.5px dashed rgba(217,179,108,.6)}
+  .bf-ticket b{display:block;font-family:Fraunces,serif;font-size:28px;color:var(--oro-claro);line-height:1.1}
+  .bf-ticket small{color:#CFC6C1;font-size:14px}
+  .bf-faltan{position:relative;color:#CFC6C1;font-size:16px;margin-bottom:44px}
+  .bf-faltan strong{color:#fff}
+  .bf-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left;margin-bottom:22px}
+  .bf-card{background:rgba(255,255,255,.04);border:1px solid rgba(217,179,108,.25);border-radius:20px;padding:26px 24px;backdrop-filter:blur(2px)}
+  .bf-card h3{font-size:24px;margin-bottom:6px;color:#fff}
+  .bf-card h3 .mas{color:var(--oro)}
+  .bf-card > p{color:#CFC6C1;margin-bottom:14px;font-size:15px}
+  .inc{list-style:none;display:grid;gap:9px}
+  .inc li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.07);color:#EDE7E3;font-size:15px}
+  .inc li:last-child{border-bottom:0;padding-bottom:0}
+  .inc li span{flex-shrink:0;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--negro);background:var(--oro);padding:4px 8px;border-radius:6px}
+  .bf-cta{position:relative;margin-top:44px}
+  .boton-bf{display:inline-block;text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+    font-size:clamp(16px,2.6vw,20px);color:var(--negro);padding:22px 40px;border-radius:999px;
+    background:linear-gradient(100deg,#D9B36C,#FFF1CF 50%,#D9B36C);background-size:200% auto;
+    box-shadow:0 0 0 0 rgba(217,179,108,.6),0 14px 40px rgba(217,179,108,.25);
+    animation:brillo 4s linear infinite, pulso 2.2s ease-in-out infinite;transition:transform .15s ease}
+  .boton-bf:hover{transform:translateY(-2px) scale(1.02)}
+  @keyframes pulso{0%,100%{box-shadow:0 0 0 0 rgba(217,179,108,.55),0 14px 40px rgba(217,179,108,.25)}50%{box-shadow:0 0 0 14px rgba(217,179,108,0),0 14px 40px rgba(217,179,108,.25)}}
+  .bf-cta p{color:#CFC6C1;margin-top:16px;font-size:14px;letter-spacing:.04em}
+  /* franja entre píldoras */
+  .franja{position:relative;overflow:hidden;border:1px solid rgba(217,179,108,.35);
+    background:radial-gradient(140% 120% at 0% 0%,#2a2017 0%,#141110 60%)}
+  .franja .bf-mini{display:block;font-size:12px;font-weight:800;letter-spacing:.18em;color:var(--oro);text-transform:uppercase;margin-bottom:4px}
+  .franja strong{font-size:24px}
+  @media (max-width:640px){
+    .bf-grid{grid-template-columns:1fr}
+    .bf-in{padding:56px 18px 64px}
+    .bf-ticket div+div{border-left:0;border-top:1.5px dashed rgba(217,179,108,.6)}
+    .bf-ticket div{flex:1 1 100%}
+    .boton-bf{width:100%;padding:20px 22px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cinta div,.bf-titulo,.boton-bf,.punto{animation:none}
+  }
+
   footer{text-align:center;padding:32px 20px;color:var(--suave);font-size:14px}
   footer a{color:var(--rosa-osc)}
 
   @media (max-width:520px){
     body{font-size:16px}
-    .hero{padding:44px 0 28px}
+    .hero{padding:44px 20px 28px}
     .pildora .texto{padding:18px 18px 22px}
     .pildora h2{font-size:23px}
     .franja{flex-direction:column;align-items:stretch;text-align:center}
@@ -168,8 +231,9 @@
 
   <aside class="franja">
     <div>
-      <strong>🖤 Black Friday: Diseñá tu 2027 de éxito</strong>
-      <span>Taller del 6 de diciembre + 3 meses de El Círculo</span>
+      <span class="bf-mini">🖤 Black Friday · Aprovechá esta oportunidad</span>
+      <strong>Taller en vivo: Diseñá tu 2027 de éxito</strong>
+      <span>6 de diciembre + 3 meses de El Círculo</span>
     </div>
     <a class="boton" href="#oferta">Ver la oferta</a>
   </aside>
@@ -194,53 +258,65 @@
 
 </main>
 
-<section class="oferta" id="oferta">
-  <div class="wrap">
-    <div class="centro"><span class="etiqueta">🖤 Oferta Black Friday</span></div>
-    <h2>Diseñá tu <em>2027</em> de éxito</h2>
-    <p class="sub">Si estas píldoras te movieron algo, imaginate tenerlas todos los domingos. Aprovechá el Black Friday y empezá el año con un plan.</p>
+<section class="bf" id="oferta">
+  <div class="cinta" aria-hidden="true"><div>Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦&nbsp;</div></div>
+  <div class="bf-in">
+    <div class="bf-fondo" aria-hidden="true">BLACK FRIDAY</div>
 
-    <div class="fecha">
-      <div><b>6 de diciembre</b><small>Taller presencial y virtual</small></div>
-      <div><b>+ 3 meses</b><small>de El Círculo</small></div>
+    <span class="bf-kicker">🖤 Oferta Black Friday</span>
+    <p class="bf-aprovecha">Aprovechá esta oportunidad<br><em>por ser Black Friday</em></p>
+
+    <div class="bf-envivo"><span class="punto"></span>Taller en vivo</div>
+    <h2 class="bf-titulo"><small>Diseñá tu</small>2027 de éxito</h2>
+
+    <div class="bf-ticket">
+      <div><b>6 de diciembre</b><small>Presencial en Buenos Aires o virtual</small></div>
+      <div><b>+ 3 meses</b><small>de El Círculo incluidos</small></div>
     </div>
+    <p class="bf-faltan" id="faltan">Si estas píldoras te movieron algo, imaginate tenerlas todos los domingos.</p>
 
-    <div class="bloque">
-      <h3>Taller «Diseñá tu 2027 de éxito»</h3>
-      <p>Una jornada para planificar tu año con estrategia y con alma. Elegí cómo venir:</p>
-      <ul class="lista">
-        <li><b>Presencial</b> en Teamworks Coworking, Suipacha 946, Retiro (Buenos Aires), con merienda y networking.</li>
-        <li><b>Virtual</b>, en vivo, desde donde estés.</li>
-        <li>Taller de planificación estratégica 2027.</li>
-        <li>Workbook en PDF para trabajar tu año.</li>
-      </ul>
-    </div>
-
-    <div class="bloque">
-      <h3><span class="mas">+</span>3 meses de El Círculo</h3>
-      <ul class="lista">
-        <li>Acceso a todos los microprogramas:</li>
-      </ul>
-      <div class="programas">
-        <span>Libertad Digital</span>
-        <span>Reto Zero a Fit</span>
-        <span>Mentalidad Imparable</span>
-        <span>Academia de Guerreras</span>
-        <span>Códigos de Riqueza</span>
-        <span>Magia Fem</span>
+    <div class="bf-grid">
+      <div class="bf-card">
+        <h3>Taller en vivo</h3>
+        <p>Una jornada para planificar tu año con estrategia y con alma.</p>
+        <ul class="inc">
+          <li>Diseñá tu 2027 de éxito <span>INCLUIDO</span></li>
+          <li>Presencial en Retiro, CABA, o virtual <span>VOS ELEGÍS</span></li>
+          <li>Merienda y networking (presencial) <span>INCLUIDO</span></li>
+          <li>Workbook en PDF <span>INCLUIDO</span></li>
+        </ul>
       </div>
-      <ul class="lista" style="margin-top:16px">
-        <li>Una píldora nueva todos los domingos, como estas.</li>
-        <li>Un Zoom grupal conmigo cada mes, durante los 3 meses.</li>
-      </ul>
+      <div class="bf-card">
+        <h3><span class="mas">+</span> 3 meses de El Círculo</h3>
+        <p>Todo lo que necesitás para sostener tu 2027.</p>
+        <ul class="inc">
+          <li>Libertad Digital <span>INCLUIDO</span></li>
+          <li>Reto Zero a Fit <span>INCLUIDO</span></li>
+          <li>Mentalidad Imparable <span>INCLUIDO</span></li>
+          <li>Academia de Guerreras <span>INCLUIDO</span></li>
+          <li>Códigos de Riqueza <span>INCLUIDO</span></li>
+          <li>Magia Fem <span>INCLUIDO</span></li>
+          <li>Una píldora cada domingo <span>INCLUIDO</span></li>
+          <li>1 Zoom grupal al mes con Cami <span>INCLUIDO</span></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="cierre">
-      <a class="boton" href="https://elcirculocamilaromero.com" target="_blank" rel="noopener">Quiero mi lugar en el Black Friday</a>
-      <p>Oferta por tiempo limitado.</p>
+    <div class="bf-cta">
+      <a class="boton-bf" href="https://elcirculocamilaromero.com" target="_blank" rel="noopener">¡Sí, quiero aprovechar el Black Friday!</a>
+      <p>Oferta Black Friday · Cupos limitados</p>
     </div>
   </div>
 </section>
+<script>
+  (function(){
+    var taller=new Date(2026,11,6), hoy=new Date(); hoy.setHours(0,0,0,0);
+    var d=Math.round((taller-hoy)/864e5), el=document.getElementById('faltan');
+    if(d>1) el.innerHTML='Faltan <strong>'+d+' días</strong> para el taller. Si estas píldoras te movieron algo, imaginate tenerlas todos los domingos.';
+    else if(d===1) el.innerHTML='<strong>¡El taller es mañana!</strong> Últimos lugares.';
+    else if(d===0) el.innerHTML='<strong>¡El taller es hoy!</strong>';
+  })();
+</script>
 
 <footer>
   Camila Romero · <a href="https://www.instagram.com/soycamilaromero/" target="_blank" rel="noopener">@soycamilaromero</a>
