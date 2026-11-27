@@ -81,6 +81,9 @@
     .play::before{left:16px;top:12px;border-width:9px 0 9px 14px}
   }
 
+  .reproductor{background:#000;display:flex;justify-content:center;align-items:center}
+  .reproductor video{display:block;width:auto;max-width:100%;height:auto;max-height:80vh;min-height:220px;background:#000}
+
   /* ---------- Franja Black Friday (entre píldoras) ---------- */
   .franja{
     background:var(--negro);color:#fff;border-radius:var(--radio);
@@ -235,7 +238,7 @@
 
   <!-- Para cambiar un video: reemplazá el código que va entre /d/ y /preview -->
   <article class="pildora">
-    <button class="video portada" data-id="1hALNIdYU1ScEdK7v5141BUHsA7G5AfHb" aria-label="Ver la píldora 1: Cuidá tu energía como oro"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 1</span><span class="portada-tit">Cuidá tu energía como oro</span></span><span class="play" aria-hidden="true"></span></button>
+    <button class="video portada" data-src="videos/pildora-1.mp4" aria-label="Ver la píldora 1: Cuidá tu energía como oro"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 1</span><span class="portada-tit">Cuidá tu energía como oro</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 1</span>
       <h2>Cuidá tu energía como oro</h2>
@@ -244,7 +247,7 @@
   </article>
 
   <article class="pildora">
-    <button class="video portada" data-id="1MXZ8MtFCw5M38KIKPzsOzS91IbqSAdhD" aria-label="Ver la píldora 2: El hábito que te está robando la energía"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 2</span><span class="portada-tit">El hábito que te está robando la energía</span></span><span class="play" aria-hidden="true"></span></button>
+    <button class="video portada" data-src="videos/pildora-2.mp4" aria-label="Ver la píldora 2: El hábito que te está robando la energía"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 2</span><span class="portada-tit">El hábito que te está robando la energía</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 2</span>
       <h2>El hábito que te está robando la energía</h2>
@@ -253,7 +256,7 @@
   </article>
 
   <article class="pildora">
-    <button class="video portada" data-id="1Mqqld9JPy3gZdESiT0K-h71ILZkQuQ2P" aria-label="Ver la píldora 3: ¿Qué estás haciendo para llenar tu alma?"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 3</span><span class="portada-tit">¿Qué estás haciendo para llenar tu alma?</span></span><span class="play" aria-hidden="true"></span></button>
+    <button class="video portada" data-src="videos/pildora-3.mp4" aria-label="Ver la píldora 3: ¿Qué estás haciendo para llenar tu alma?"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 3</span><span class="portada-tit">¿Qué estás haciendo para llenar tu alma?</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 3</span>
       <h2>¿Qué estás haciendo para llenar tu alma?</h2>
@@ -271,7 +274,7 @@
   </aside>
 
   <article class="pildora">
-    <button class="video portada" data-id="1bmIhdxUz9VMKaHi_J-YkG4UD9rPVECeJ" aria-label="Ver la píldora 4: Emprendé desde tu feminidad"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 4</span><span class="portada-tit">Emprendé desde tu feminidad</span></span><span class="play" aria-hidden="true"></span></button>
+    <button class="video portada" data-src="videos/pildora-4.mp4" aria-label="Ver la píldora 4: Emprendé desde tu feminidad"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 4</span><span class="portada-tit">Emprendé desde tu feminidad</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 4</span>
       <h2>Emprendé desde tu feminidad</h2>
@@ -280,7 +283,7 @@
   </article>
 
   <article class="pildora">
-    <button class="video portada" data-id="1ueYcZ5Qjf6wEhF69r0o3k_kxcB_a1Dbq" aria-label="Ver la píldora 5: 3 principios que separan a las que crecen"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 5</span><span class="portada-tit">3 principios que separan a las que crecen</span></span><span class="play" aria-hidden="true"></span></button>
+    <button class="video portada" data-src="videos/pildora-5.mp4" aria-label="Ver la píldora 5: 3 principios que separan a las que crecen"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 5</span><span class="portada-tit">3 principios que separan a las que crecen</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 5</span>
       <h2>3 principios que separan a las que crecen</h2>
@@ -360,9 +363,13 @@
 <script>
   document.querySelectorAll('.portada').forEach(function(b){
     b.addEventListener('click',function(){
-      var d=document.createElement('div'); d.className='video';
-      d.innerHTML='<iframe src="https://drive.google.com/file/d/'+b.dataset.id+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+b.getAttribute('aria-label')+'"></iframe>';
-      b.replaceWith(d);
+      var d=document.createElement('div'); d.className='reproductor';
+      var v=document.createElement('video');
+      v.src=b.dataset.src; v.controls=true; v.playsInline=true; v.preload='auto';
+      v.setAttribute('playsinline',''); v.setAttribute('aria-label',b.getAttribute('aria-label'));
+      d.appendChild(v); b.replaceWith(d);
+      document.querySelectorAll('.reproductor video').forEach(function(o){ if(o!==v) o.pause(); });
+      v.play().catch(function(){});
     });
   });
 </script>
