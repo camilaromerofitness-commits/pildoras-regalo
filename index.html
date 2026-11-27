@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 píldoras de regalo · El Círculo · Camila Romero</title>
+<meta name="description" content="Te regalo las 5 mejores píldoras de El Círculo: videos cortos de valor, de menos de 5 minutos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crema:#FBF6EF;
+    --arena:#F1E6D8;
+    --tinta:#2B2220;
+    --suave:#6E5F59;
+    --rosa:#C9877A;
+    --rosa-osc:#A9665A;
+    --negro:#141110;
+    --oro:#D9B36C;
+    --oro-claro:#F0D9A6;
+    --radio:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Inter,system-ui,sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.6;
+    font-size:17px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15}
+
+  /* ---------- Portada ---------- */
+  .hero{padding:64px 0 40px;text-align:center}
+  .etiqueta{
+    display:inline-block;font-size:13px;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--rosa-osc);background:#fff;
+    border:1px solid var(--arena);padding:6px 14px;border-radius:999px;margin-bottom:22px
+  }
+  .hero h1{font-size:clamp(34px,7vw,54px);margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--rosa-osc)}
+  .hero p{color:var(--suave);font-size:19px;max-width:560px;margin:0 auto}
+  .firma{margin-top:22px;font-family:Fraunces,serif;font-style:italic;color:var(--tinta)}
+
+  /* ---------- Píldoras ---------- */
+  .pildoras{padding:16px 0 24px;display:flex;flex-direction:column;gap:28px}
+  .pildora{
+    background:#fff;border-radius:var(--radio);overflow:hidden;
+    box-shadow:0 1px 2px rgba(43,34,32,.05),0 8px 28px rgba(43,34,32,.06);
+  }
+  .video{position:relative;aspect-ratio:16/9;background:var(--arena)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .pildora .texto{padding:22px 24px 26px}
+  .num{
+    font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-osc);
+    margin-bottom:6px;display:block
+  }
+  .pildora h2{font-size:26px;margin-bottom:8px}
+  .pildora p{color:var(--suave)}
+
+  /* ---------- Franja Black Friday (entre píldoras) ---------- */
+  .franja{
+    background:var(--negro);color:#fff;border-radius:var(--radio);
+    padding:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap
+  }
+  .franja strong{font-family:Fraunces,serif;font-size:22px;font-weight:600;display:block}
+  .franja span{color:var(--oro-claro);font-size:15px}
+
+  /* ---------- Botón ---------- */
+  .boton{
+    display:inline-block;text-decoration:none;font-weight:700;font-size:17px;
+    background:var(--oro);color:var(--negro);padding:16px 28px;border-radius:999px;
+    transition:transform .15s ease, background .15s ease;text-align:center
+  }
+  .boton:hover{background:var(--oro-claro);transform:translateY(-1px)}
+
+  /* ---------- Oferta Black Friday ---------- */
+  .oferta{background:var(--negro);color:#fff;padding:64px 0;margin-top:40px}
+  .oferta .etiqueta{background:transparent;color:var(--oro);border-color:rgba(217,179,108,.4)}
+  .oferta h2{font-size:clamp(32px,6.5vw,48px);text-align:center;margin-bottom:10px}
+  .oferta h2 em{color:var(--oro);font-style:italic}
+  .oferta .sub{text-align:center;color:#CFC6C1;font-size:19px;max-width:560px;margin:0 auto 36px}
+  .centro{text-align:center}
+  .fecha{
+    display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:40px
+  }
+  .fecha div{
+    border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px 20px;text-align:center;min-width:180px
+  }
+  .fecha b{display:block;font-family:Fraunces,serif;font-size:22px;color:var(--oro-claro);font-weight:600}
+  .fecha small{color:#CFC6C1;font-size:14px}
+
+  .bloque{
+    background:#1E1A18;border:1px solid rgba(255,255,255,.08);border-radius:var(--radio);
+    padding:26px 24px;margin-bottom:18px
+  }
+  .bloque h3{font-size:22px;margin-bottom:12px;color:#fff}
+  .bloque h3 .mas{color:var(--oro);margin-right:6px}
+  .bloque p{color:#CFC6C1}
+  .lista{list-style:none;display:grid;gap:10px;margin-top:12px}
+  .lista li{padding-left:28px;position:relative;color:#E9E3DF}
+  .lista li::before{
+    content:"✓";position:absolute;left:0;top:0;color:var(--oro);font-weight:700
+  }
+  .programas{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .programas span{
+    font-size:14px;border:1px solid rgba(217,179,108,.35);color:var(--oro-claro);
+    padding:6px 12px;border-radius:999px
+  }
+  .cierre{text-align:center;margin-top:36px}
+  .cierre p{color:#CFC6C1;margin-top:14px;font-size:15px}
+
+  footer{text-align:center;padding:32px 20px;color:var(--suave);font-size:14px}
+  footer a{color:var(--rosa-osc)}
+
+  @media (max-width:520px){
+    body{font-size:16px}
+    .hero{padding:44px 0 28px}
+    .pildora .texto{padding:18px 18px 22px}
+    .pildora h2{font-size:23px}
+    .franja{flex-direction:column;align-items:stretch;text-align:center}
+    .boton{width:100%}
+    .fecha div{min-width:0;flex:1 1 100%}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <span class="etiqueta">🎁 Regalo de El Círculo</span>
+  <h1>Mis 5 píldoras <em>favoritas</em>, para vos</h1>
+  <p>Todos los domingos les doy a las chicas de El Círculo una píldora nueva: un video corto, de menos de 5 minutos, con algo que te cambia el día. Elegí las 5 mejores y hoy te las regalo.</p>
+  <p class="firma">Con cariño, Cami</p>
+</header>
+
+<main class="wrap pildoras">
+
+  <!-- Para cambiar un video: reemplazá el código que va entre /d/ y /preview -->
+  <article class="pildora">
+    <div class="video"><iframe src="https://drive.google.com/file/d/1hALNIdYU1ScEdK7v5141BUHsA7G5AfHb/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 1"></iframe></div>
+    <div class="texto">
+      <span class="num">Píldora 1</span>
+      <h2>Cuidá tu energía como oro</h2>
+      <p>Tu energía es lo más valioso que tenés. Aprendé a darte cuenta de qué te la roba y cómo protegerla.</p>
+    </div>
+  </article>
+
+  <article class="pildora">
+    <div class="video"><iframe src="https://drive.google.com/file/d/1MXZ8MtFCw5M38KIKPzsOzS91IbqSAdhD/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 2"></iframe></div>
+    <div class="texto">
+      <span class="num">Píldora 2</span>
+      <h2>El hábito que te está robando la energía</h2>
+      <p>Terminás el día agotada y sin haber hecho lo importante. Te muestro el hábito que lo causa y cómo dar vuelta tus prioridades: primero lo primero.</p>
+    </div>
+  </article>
+
+  <article class="pildora">
+    <div class="video"><iframe src="https://drive.google.com/file/d/1Mqqld9JPy3gZdESiT0K-h71ILZkQuQ2P/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 3"></iframe></div>
+    <div class="texto">
+      <span class="num">Píldora 3</span>
+      <h2>¿Qué estás haciendo para llenar tu alma?</h2>
+      <p>Una pregunta simple que te frena en seco. Mirá qué te nutre de verdad y cuánto espacio le estás dando.</p>
+    </div>
+  </article>
+
+  <aside class="franja">
+    <div>
+      <strong>🖤 Black Friday: Diseñá tu 2027 de éxito</strong>
+      <span>Taller del 6 de diciembre + 3 meses de El Círculo</span>
+    </div>
+    <a class="boton" href="#oferta">Ver la oferta</a>
+  </aside>
+
+  <article class="pildora">
+    <div class="video"><iframe src="https://drive.google.com/file/d/1bmIhdxUz9VMKaHi_J-YkG4UD9rPVECeJ/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 4"></iframe></div>
+    <div class="texto">
+      <span class="num">Píldora 4</span>
+      <h2>Emprendé desde tu feminidad</h2>
+      <p>Tenés ganas de arrancar tu proyecto, pero el miedo y las «circunstancias perfectas» te frenan. Una charla con Mister Abundancia sobre emprender desde tu esencia.</p>
+    </div>
+  </article>
+
+  <article class="pildora">
+    <div class="video"><iframe src="https://drive.google.com/file/d/1ueYcZ5Qjf6wEhF69r0o3k_kxcB_a1Dbq/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 5"></iframe></div>
+    <div class="texto">
+      <span class="num">Píldora 5</span>
+      <h2>3 principios que separan a las que crecen</h2>
+      <p>Apostar por vos, alinear tus acciones con lo que decís y tomar acción masiva, aunque sea imperfecta. Son tus decisiones, no tus condiciones.</p>
+    </div>
+  </article>
+
+</main>
+
+<section class="oferta" id="oferta">
+  <div class="wrap">
+    <div class="centro"><span class="etiqueta">🖤 Oferta Black Friday</span></div>
+    <h2>Diseñá tu <em>2027</em> de éxito</h2>
+    <p class="sub">Si estas píldoras te movieron algo, imaginate tenerlas todos los domingos. Aprovechá el Black Friday y empezá el año con un plan.</p>
+
+    <div class="fecha">
+      <div><b>6 de diciembre</b><small>Taller presencial y virtual</small></div>
+      <div><b>+ 3 meses</b><small>de El Círculo</small></div>
+    </div>
+
+    <div class="bloque">
+      <h3>Taller «Diseñá tu 2027 de éxito»</h3>
+      <p>Una jornada para planificar tu año con estrategia y con alma. Elegí cómo venir:</p>
+      <ul class="lista">
+        <li><b>Presencial</b> en Teamworks Coworking, Suipacha 946, Retiro (Buenos Aires), con merienda y networking.</li>
+        <li><b>Virtual</b>, en vivo, desde donde estés.</li>
+        <li>Taller de planificación estratégica 2027.</li>
+        <li>Workbook en PDF para trabajar tu año.</li>
+      </ul>
+    </div>
+
+    <div class="bloque">
+      <h3><span class="mas">+</span>3 meses de El Círculo</h3>
+      <ul class="lista">
+        <li>Acceso a todos los microprogramas:</li>
+      </ul>
+      <div class="programas">
+        <span>Libertad Digital</span>
+        <span>Reto Zero a Fit</span>
+        <span>Mentalidad Imparable</span>
+        <span>Academia de Guerreras</span>
+        <span>Códigos de Riqueza</span>
+        <span>Magia Fem</span>
+      </div>
+      <ul class="lista" style="margin-top:16px">
+        <li>Una píldora nueva todos los domingos, como estas.</li>
+        <li>Un Zoom grupal conmigo cada mes, durante los 3 meses.</li>
+      </ul>
+    </div>
+
+    <div class="cierre">
+      <a class="boton" href="https://elcirculocamilaromero.com" target="_blank" rel="noopener">Quiero mi lugar en el Black Friday</a>
+      <p>Oferta por tiempo limitado.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Camila Romero · <a href="https://www.instagram.com/soycamilaromero/" target="_blank" rel="noopener">@soycamilaromero</a>
+</footer>
+
+</body>
+</html>
