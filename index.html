@@ -58,8 +58,28 @@
     font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-osc);
     margin-bottom:6px;display:block
   }
+  .pildora .num{display:none}
   .pildora h2{font-size:26px;margin-bottom:8px}
   .pildora p{color:var(--suave)}
+
+  /* ---------- Portadas ---------- */
+  .portada{display:block;width:100%;border:0;padding:0;cursor:pointer;overflow:hidden;background:#120f0d;font:inherit;color:#fff;text-align:left}
+  .portada img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;transition:transform .5s ease}
+  .portada::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,9,8,.92) 0%,rgba(10,9,8,.7) 40%,rgba(10,9,8,0) 68%)}
+  .portada:hover img{transform:scale(1.03)}
+  .portada-txt{position:absolute;z-index:1;left:7%;top:50%;transform:translateY(-50%);width:52%}
+  .portada-num{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--negro);background:var(--oro);padding:5px 10px;border-radius:6px;margin-bottom:12px}
+  .portada-tit{display:block;font-family:Fraunces,serif;font-weight:600;line-height:1.08;font-size:clamp(20px,4.4vw,34px);color:#fff}
+  .play{position:absolute;z-index:1;left:7%;bottom:9%;width:54px;height:54px;border-radius:50%;background:var(--oro);box-shadow:0 6px 20px rgba(0,0,0,.35);transition:transform .15s ease}
+  .play::before{content:"";position:absolute;left:21px;top:16px;border-style:solid;border-width:11px 0 11px 17px;border-color:transparent transparent transparent var(--negro)}
+  .portada:hover .play{transform:scale(1.08)}
+  .portada-txt{top:42%}
+  @media (max-width:520px){
+    .portada-txt{width:58%;top:40%}
+    .portada-num{font-size:10px;margin-bottom:8px}
+    .play{width:42px;height:42px;bottom:8%}
+    .play::before{left:16px;top:12px;border-width:9px 0 9px 14px}
+  }
 
   /* ---------- Franja Black Friday (entre píldoras) ---------- */
   .franja{
@@ -172,6 +192,18 @@
     .bf-ticket div{flex:1 1 100%}
     .boton-bf{width:100%;padding:20px 22px}
   }
+  .bf-ticket b{font-size:24px}
+  .bf-filas{position:relative;display:grid;gap:26px;text-align:left}
+  .bf-fila{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:22px;align-items:center}
+  .bf-fila--inv{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .bf-fila--inv .bf-foto{order:2}
+  .bf-foto{width:100%;border-radius:20px;border:1px solid rgba(217,179,108,.3);box-shadow:0 20px 50px rgba(0,0,0,.45);display:block}
+  .inc li{align-items:flex-start}
+  @media (max-width:640px){
+    .bf-fila,.bf-fila--inv{grid-template-columns:1fr}
+    .bf-fila--inv .bf-foto{order:0}
+  }
+
   @media (prefers-reduced-motion:reduce){
     .cinta div,.bf-titulo,.boton-bf,.punto{animation:none}
   }
@@ -203,7 +235,7 @@
 
   <!-- Para cambiar un video: reemplazá el código que va entre /d/ y /preview -->
   <article class="pildora">
-    <div class="video"><iframe src="https://drive.google.com/file/d/1hALNIdYU1ScEdK7v5141BUHsA7G5AfHb/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 1"></iframe></div>
+    <button class="video portada" data-id="1hALNIdYU1ScEdK7v5141BUHsA7G5AfHb" aria-label="Ver la píldora 1: Cuidá tu energía como oro"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 1</span><span class="portada-tit">Cuidá tu energía como oro</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 1</span>
       <h2>Cuidá tu energía como oro</h2>
@@ -212,7 +244,7 @@
   </article>
 
   <article class="pildora">
-    <div class="video"><iframe src="https://drive.google.com/file/d/1MXZ8MtFCw5M38KIKPzsOzS91IbqSAdhD/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 2"></iframe></div>
+    <button class="video portada" data-id="1MXZ8MtFCw5M38KIKPzsOzS91IbqSAdhD" aria-label="Ver la píldora 2: El hábito que te está robando la energía"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 2</span><span class="portada-tit">El hábito que te está robando la energía</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 2</span>
       <h2>El hábito que te está robando la energía</h2>
@@ -221,7 +253,7 @@
   </article>
 
   <article class="pildora">
-    <div class="video"><iframe src="https://drive.google.com/file/d/1Mqqld9JPy3gZdESiT0K-h71ILZkQuQ2P/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 3"></iframe></div>
+    <button class="video portada" data-id="1Mqqld9JPy3gZdESiT0K-h71ILZkQuQ2P" aria-label="Ver la píldora 3: ¿Qué estás haciendo para llenar tu alma?"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 3</span><span class="portada-tit">¿Qué estás haciendo para llenar tu alma?</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 3</span>
       <h2>¿Qué estás haciendo para llenar tu alma?</h2>
@@ -233,13 +265,13 @@
     <div>
       <span class="bf-mini">🖤 Black Friday · Aprovechá esta oportunidad</span>
       <strong>Taller en vivo: Diseñá tu 2027 de éxito</strong>
-      <span>6 de diciembre + 3 meses de El Círculo</span>
+      <span>Domingo 6 de diciembre · 10:00 hs por Zoom + 3 meses de El Círculo</span>
     </div>
     <a class="boton" href="#oferta">Ver la oferta</a>
   </aside>
 
   <article class="pildora">
-    <div class="video"><iframe src="https://drive.google.com/file/d/1bmIhdxUz9VMKaHi_J-YkG4UD9rPVECeJ/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 4"></iframe></div>
+    <button class="video portada" data-id="1bmIhdxUz9VMKaHi_J-YkG4UD9rPVECeJ" aria-label="Ver la píldora 4: Emprendé desde tu feminidad"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 4</span><span class="portada-tit">Emprendé desde tu feminidad</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 4</span>
       <h2>Emprendé desde tu feminidad</h2>
@@ -248,7 +280,7 @@
   </article>
 
   <article class="pildora">
-    <div class="video"><iframe src="https://drive.google.com/file/d/1ueYcZ5Qjf6wEhF69r0o3k_kxcB_a1Dbq/preview" allow="autoplay; fullscreen" loading="lazy" title="Píldora 5"></iframe></div>
+    <button class="video portada" data-id="1ueYcZ5Qjf6wEhF69r0o3k_kxcB_a1Dbq" aria-label="Ver la píldora 5: 3 principios que separan a las que crecen"><img src="img/hero.webp" alt="" loading="lazy"><span class="portada-txt"><span class="portada-num">Píldora 5</span><span class="portada-tit">3 principios que separan a las que crecen</span></span><span class="play" aria-hidden="true"></span></button>
     <div class="texto">
       <span class="num">Píldora 5</span>
       <h2>3 principios que separan a las que crecen</h2>
@@ -259,7 +291,7 @@
 </main>
 
 <section class="bf" id="oferta">
-  <div class="cinta" aria-hidden="true"><div>Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ Cupos limitados ✦&nbsp;</div></div>
+  <div class="cinta" aria-hidden="true"><div>Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ 100% virtual por Zoom ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ 100% virtual por Zoom ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ 100% virtual por Zoom ✦ Black Friday ✦ Aprovechá esta oportunidad ✦ Taller en vivo ✦ Diseñá tu 2027 de éxito ✦ + 3 meses de El Círculo ✦ 100% virtual por Zoom ✦&nbsp;</div></div>
   <div class="bf-in">
     <div class="bf-fondo" aria-hidden="true">BLACK FRIDAY</div>
 
@@ -270,41 +302,44 @@
     <h2 class="bf-titulo"><small>Diseñá tu</small>2027 de éxito</h2>
 
     <div class="bf-ticket">
-      <div><b>6 de diciembre</b><small>Presencial en Buenos Aires o virtual</small></div>
-      <div><b>+ 3 meses</b><small>de El Círculo incluidos</small></div>
+      <div><b>Domingo 6 de diciembre</b><small>Inmersión en vivo</small></div>
+      <div><b>10:00 hs</b><small>Uruguay · Argentina</small></div>
+      <div><b>100% virtual</b><small>por Zoom</small></div>
     </div>
     <p class="bf-faltan" id="faltan">Si estas píldoras te movieron algo, imaginate tenerlas todos los domingos.</p>
 
-    <div class="bf-grid">
-      <div class="bf-card">
-        <h3>Taller en vivo</h3>
-        <p>Una jornada para planificar tu año con estrategia y con alma.</p>
-        <ul class="inc">
-          <li>Diseñá tu 2027 de éxito <span>INCLUIDO</span></li>
-          <li>Presencial en Retiro, CABA, o virtual <span>VOS ELEGÍS</span></li>
-          <li>Merienda y networking (presencial) <span>INCLUIDO</span></li>
-          <li>Workbook en PDF <span>INCLUIDO</span></li>
-        </ul>
+    <div class="bf-filas">
+      <div class="bf-fila">
+        <img class="bf-foto" src="img/inmersion.webp" alt="Diseñá tu 2027 de éxito, clase en vivo por Zoom" loading="lazy">
+        <div class="bf-card">
+          <h3>Inmersión en vivo</h3>
+          <p>Vas a aprender a planificar un año de éxito personal y profesional, para que dejes de procrastinar y lleves tus resultados al siguiente nivel.</p>
+          <ul class="inc">
+            <li>Planificación: Diseñá tu 2027 de éxito <span>INCLUIDO</span></li>
+            <li>Domingo 6 de diciembre, 10:00 hs (Uruguay · Argentina) <span>EN VIVO</span></li>
+            <li>100% virtual, desde donde estés <span>ZOOM</span></li>
+            <li>Workbook en PDF <span>INCLUIDO</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="bf-card">
-        <h3><span class="mas">+</span> 3 meses de El Círculo</h3>
-        <p>Todo lo que necesitás para sostener tu 2027.</p>
-        <ul class="inc">
-          <li>Libertad Digital <span>INCLUIDO</span></li>
-          <li>Reto Zero a Fit <span>INCLUIDO</span></li>
-          <li>Mentalidad Imparable <span>INCLUIDO</span></li>
-          <li>Academia de Guerreras <span>INCLUIDO</span></li>
-          <li>Códigos de Riqueza <span>INCLUIDO</span></li>
-          <li>Magia Fem <span>INCLUIDO</span></li>
-          <li>Una píldora cada domingo <span>INCLUIDO</span></li>
-          <li>1 Zoom grupal al mes con Cami <span>INCLUIDO</span></li>
-        </ul>
+      <div class="bf-fila bf-fila--inv">
+        <img class="bf-foto" src="img/programas.jpg" alt="Programas de El Círculo: Proyecto Libertad Digital, Mentalidad Imparable, Reto Zero a Fit, Academia de Guerreras, Códigos de Riqueza y Magia Fem" loading="lazy">
+        <div class="bf-card">
+          <h3><span class="mas">+</span> 3 meses de El Círculo</h3>
+          <p>Todo lo que necesitás para sostener tu 2027.</p>
+          <ul class="inc">
+            <li>Varios de mis programas: Códigos de Riqueza, Mentalidad Imparable, Proyecto Libertad Digital, Reto Zero a Fit, Academia de Guerreras y Magia Fem <span>INCLUIDO</span></li>
+            <li>3 mentorías en vivo conmigo por Zoom, 1 por mes <span>INCLUIDO</span></li>
+            <li>Una píldora nueva todos los domingos, como estas <span>INCLUIDO</span></li>
+            <li>Comunidad de mujeres emprendedoras <span>INCLUIDO</span></li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="bf-cta">
       <a class="boton-bf" href="https://elcirculocamilaromero.com" target="_blank" rel="noopener">¡Sí, quiero aprovechar el Black Friday!</a>
-      <p>Oferta Black Friday · Cupos limitados</p>
+      <p>Oferta Black Friday · 100% virtual por Zoom</p>
     </div>
   </div>
 </section>
@@ -322,5 +357,14 @@
   Camila Romero · <a href="https://www.instagram.com/soycamilaromero/" target="_blank" rel="noopener">@soycamilaromero</a>
 </footer>
 
+<script>
+  document.querySelectorAll('.portada').forEach(function(b){
+    b.addEventListener('click',function(){
+      var d=document.createElement('div'); d.className='video';
+      d.innerHTML='<iframe src="https://drive.google.com/file/d/'+b.dataset.id+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+b.getAttribute('aria-label')+'"></iframe>';
+      b.replaceWith(d);
+    });
+  });
+</script>
 </body>
 </html>
